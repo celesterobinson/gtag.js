@@ -1,0 +1,11 @@
+{
+  "displayName": "gtag.js",
+  "name": "gtag.js",
+  "platform": "web",
+  "version": "1.0.0",
+  "description": "gtag.js allows you to run Google Adwords through Launch.",
+  "author": {
+    "name": "Celeste Robinson"
+  },
+  "iconPath": "gtag.svg"
+}
