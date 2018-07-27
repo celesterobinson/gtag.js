@@ -7,5 +7,6 @@
   "author": {
     "name": "Celeste Robinson"
   },
+  "viewBasePath": "src/view/",
   "iconPath": "google-g.svg"
 }
