@@ -4,9 +4,15 @@
   "platform": "web",
   "version": "1.0.0",
   "description": "gtag.js allows you to run Google Adwords through Launch.",
+  "iconPath": "google-g.svg",
   "author": {
     "name": "Celeste Robinson"
   },
   "viewBasePath": "src/view/",
-  "iconPath": "google-g.svg"
+  "sharedModules": [
+    {
+      "name": "load-gtag",
+      "libPath": "src/lib/gtagCode.js"
+    }
+  ]
 }
