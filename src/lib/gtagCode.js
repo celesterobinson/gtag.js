@@ -11,5 +11,5 @@ window.gtag = function () {
 };
 gtag('js', new Date());
 conversionIdList.forEach(function (conversionId) {
-    gtag('event', conversionId);
+    gtag('config', conversionId);
 });
