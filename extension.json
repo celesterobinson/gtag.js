@@ -9,10 +9,22 @@
     "name": "Celeste Robinson"
   },
   "viewBasePath": "src/view/",
-  "sharedModules": [
-    {
-      "name": "load-gtag",
-      "libPath": "src/lib/gtagCode.js"
+  "configuration": {
+    "viewPath": "configuration/configuration.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "conversionIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
     }
-  ]
+  },
+  "main": "src/lib/gtagCode.js"
 }

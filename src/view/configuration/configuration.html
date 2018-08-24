@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Extension Configuration</title>
+    <style>
+        #conversionIds {
+            border-radius: 5px;
+            width: 300px;
+            height: 20px;
+        }
+
+        .error {
+            background-color: #FFBABA;
+            border: 2px solid #D8000C;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    Enter as many Google conversion ids as you would like, separated by a comma.
+    </br>
+    i.e. AW-xxxxxxxxx, GA-xxxxxxxxx, FL-xxxxxxxxx
+    </br>
+    <label>
+        Conversion Ids
+        <input type="text" id="conversionIds" autofocus>
+    </label>
+    <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+    <script>
+        var conversionIdsInput = document.querySelector('#conversionIds');
+        window.extensionBridge.register({
+            init: function (info) {
+                if (info.settings) {
+                    conversionIdsInput.value = info.settings.conversionIdList.join(',');
+                }
+            },
+
+            getSettings: function () {
+                return {
+                    conversionIdList: conversionIdsInput.value.split(',').map(id => id.trim())
+                }
+            },
+
+            validate: function () {
+                var valid = true;
+                if (!conversionIdsInput.value) {
+                    conversionIdsInput.classList.add('error');
+                    valid = false;
+                } else {
+                    conversionIdsInput.classList.remove('error');
+                }
+                return valid;
+            }
+        });
+    </script>
+</body>
+
+</html>

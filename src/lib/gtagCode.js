@@ -1,20 +1,15 @@
 'use strict';
 
 var loadScript = require('@adobe/reactor-load-script');
-var gtagLoaded = false;
+var conversionIdList = turbine.getExtensionSettings().conversionIdList;
 
-function loadGtag(conversionId) {
-    if(!gtagLoaded) {
-        var url = 'https://www.googletagmanager.com/gtag/js?id=' +  conversionId;
-        loadScript(url);
-        window.dataLayer = window.dataLayer || [];;
-        window.gtag = function(args) {
-            dataLayer.push(args);
-        };
-        gtag(arguments);
-        gtag('js', new Date());
-        gtagLoaded = true;
-    }
-}
-
-module.exports = loadGtag;
+var url = 'https://www.googletagmanager.com/gtag/js?id=' + conversionIdList[0];
+loadScript(url);
+window.dataLayer = window.dataLayer || [];
+window.gtag = function () {
+    dataLayer.push(arguments);
+};
+gtag('js', new Date());
+conversionIdList.forEach(function (conversionId) {
+    gtag('event', conversionId);
+});
