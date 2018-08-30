@@ -1,0 +1,15 @@
+body {
+    padding: 50px;
+}
+
+.error {
+    border-bottom: solid 1px #c3291c!important;
+}
+
+.error-msg {
+    color: #c3291c;
+}
+
+.error-msg-hide {
+    display: none;
+}

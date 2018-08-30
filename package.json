@@ -1,0 +1,20 @@
+{
+  "name": "gtag",
+  "version": "1.0.0",
+  "description": "Load Google's gtag.js into your site to send event data to Google Analytics, Google Ads, and Google Marketing Platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celesterobinson/gtag.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/celesterobinson/gtag.js/issues"
+  },
+  "homepage": "https://github.com/celesterobinson/gtag.js#readme"
+}

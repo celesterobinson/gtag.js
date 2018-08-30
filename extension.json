@@ -3,7 +3,7 @@
   "name": "gtag.js",
   "platform": "web",
   "version": "1.0.0",
-  "description": "gtag.js allows you to run Google Adwords through Launch.",
+  "description": "Load Google's gtag.js into your site to send event data to Google Analytics, Google Ads, and Google Marketing Platform.",
   "iconPath": "google-g.svg",
   "author": {
     "name": "Celeste Robinson"

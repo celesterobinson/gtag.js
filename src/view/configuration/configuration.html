@@ -4,37 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Extension Configuration</title>
-    <style>
-        #conversionIds {
-            border-radius: 5px;
-            width: 300px;
-            height: 20px;
-        }
-
-        .error {
-            background-color: #FFBABA;
-            border: 2px solid #D8000C;
-            outline: none;
-        }
-    </style>
+    <link rel="stylesheet" href="configuration.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 
 <body>
-    Enter as many Google conversion ids as you would like, separated by a comma.
-    </br>
-    i.e. AW-xxxxxxxxx, GA-xxxxxxxxx, FL-xxxxxxxxx
-    </br>
-    <label>
-        Conversion Ids
-        <input type="text" id="conversionIds" autofocus>
-    </label>
+    <div class="wrapper">
+        <h4>Google Account IDs</h4>
+        <h6>Enter your Google account IDs below, separated by a comma(,).</h6>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="conversionIds" placeholder="e.g. AW-123456789, GA-123456789">
+        </div>
+        <div class="error-msg"></div>
+    </div>
+
     <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
     <script>
         var conversionIdsInput = document.querySelector('#conversionIds');
+        var errorMsg = document.querySelector('.error-msg');
         window.extensionBridge.register({
             init: function (info) {
                 if (info.settings) {
-                    conversionIdsInput.value = info.settings.conversionIdList.join(',');
+                    conversionIdsInput.value = info.settings.conversionIdList.join(', ');
                 }
             },
 
@@ -46,11 +40,14 @@
 
             validate: function () {
                 var valid = true;
-                if (!conversionIdsInput.value) {
+                errorMsg.style.color = '#c3291c';
+                if (!conversionIdsInput.value.trim()) {
+                    errorMsg.innerHTML = 'Please enter at lease one account ID.'
                     conversionIdsInput.classList.add('error');
                     valid = false;
                 } else {
                     conversionIdsInput.classList.remove('error');
+                    errorMsg.innerHTML = '';
                 }
                 return valid;
             }
