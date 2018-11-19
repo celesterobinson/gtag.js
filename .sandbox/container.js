@@ -3,9 +3,10 @@ module.exports = {
   "rules": [],
   "extensions": {
     "gtag.js": {
-      "displayName": "gtag.js",
+      "displayName": "Google gtag",
       "settings": {
-        "conversionIdList": ["AW-dskfjadsfkaj", "GA-akdfja;dkfj", "FL-askdfja;sdkfjas"]
+        "conversionIdList": ["AW-sdfja;dfkj"],
+        "dataLayerName": "NewName"
       }
     }
   },
@@ -14,8 +15,8 @@ module.exports = {
   },
   "buildInfo": {
     "turbineVersion": "25.1.3",
-    "turbineBuildDate": "2018-08-24T18:43:35.601Z",
-    "buildDate": "2018-08-24T18:43:35.601Z",
+    "turbineBuildDate": "2018-11-19T21:11:47.681Z",
+    "buildDate": "2018-11-19T21:11:47.681Z",
     "environment": "development"
   }
 }

@@ -1,21 +1,37 @@
 'use strict';
 
 var loadScript = require('@adobe/reactor-load-script');
-var conversionIdList = turbine.getExtensionSettings().conversionIdList;
-// var dataLayer = turbine.getExtensionSettings().renamedDataLayer || 'dataLayer';
+var extensionSettings = turbine.getExtensionSettings();
+var conversionIdList = extensionSettings.conversionIdList;
+var dataLayerName = extensionSettings.dataLayerName;
+var url;
 
-var url = 'https://www.googletagmanager.com/gtag/js?id=' + conversionIdList[0];
-loadScript(url);
-
-if (window.dataLayer && !Array.isArray(window.dataLayer)) {
-    console.log('window.dataLayer already exists and is not an array. Visit your extension configuration in Launch, and' +
-        'reconfigure the dataLayer variable to something else of your choosing.')
+if (dataLayerName) {
+    url = 'https://www.googletagmanager.com/gtag/js?id=' + conversionIdList[0] + '&l=' + dataLayerName;
+} else {
+    url = 'https://www.googletagmanager.com/gtag/js?id=' + conversionIdList[0];
 }
 
-window.dataLayer = window.dataLayer || [];
-window.gtag = function () {
-    dataLayer.push(arguments);
-};
+
+loadScript(url);
+
+if ((window.dataLayer && !Array.isArray(window.dataLayer)) && !dataLayerName) {
+    console.log('window.dataLayer already exists and is not an array. Visit the gtag extension configuration in ' +
+        'Launch and provide a custom data layer name of your choosing.');
+}
+
+if (dataLayerName) {
+    window[dataLayerName] = window[dataLayerName] || [];
+    window.gtag = function () {
+        window[dataLayerName].push(arguments);
+    };
+} else {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () {
+        dataLayer.push(arguments);
+    };
+}
+
 gtag('js', new Date());
 conversionIdList.forEach(function (conversionId) {
     gtag('config', conversionId);
