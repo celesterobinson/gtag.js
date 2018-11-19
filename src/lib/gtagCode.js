@@ -4,14 +4,11 @@ var loadScript = require('@adobe/reactor-load-script');
 var extensionSettings = turbine.getExtensionSettings();
 var conversionIdList = extensionSettings.conversionIdList;
 var dataLayerName = extensionSettings.dataLayerName;
-var url;
+var url = 'https://www.googletagmanager.com/gtag/js?id=' + conversionIdList[0];
 
 if (dataLayerName) {
     url = 'https://www.googletagmanager.com/gtag/js?id=' + conversionIdList[0] + '&l=' + dataLayerName;
-} else {
-    url = 'https://www.googletagmanager.com/gtag/js?id=' + conversionIdList[0];
 }
-
 
 loadScript(url);
 

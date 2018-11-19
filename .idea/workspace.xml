@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3e37e3b-785c-4df2-beca-02c105292792" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.sandbox/container.js" beforeDir="false" afterPath="$PROJECT_DIR$/.sandbox/container.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/gtagCode.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/gtagCode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/configuration/configuration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/configuration/configuration.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,7 +48,7 @@
         <counts>
           <entry key="css" value="312" />
           <entry key="html" value="7484" />
-          <entry key="js" value="1445" />
+          <entry key="js" value="1448" />
           <entry key="json" value="39" />
           <entry key="md" value="2" />
         </counts>
@@ -60,7 +58,7 @@
           <entry key="CSS" value="312" />
           <entry key="HTML" value="7484" />
           <entry key="JSON" value="39" />
-          <entry key="JavaScript" value="1445" />
+          <entry key="JavaScript" value="1448" />
           <entry key="Markdown" value="2" />
         </counts>
       </usages-collector>
@@ -73,14 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lib/gtagCode.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-              <folding>
-                <element signature="e#383#591#0" />
-                <element signature="e#891#1106#0" />
-                <element signature="e#662#696#0" />
-                <element signature="e#771#808#0" />
-              </folding>
+            <state relative-caret-position="140">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -88,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/configuration/configuration.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
+            <state relative-caret-position="125">
               <caret line="24" column="67" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
             </state>
           </provider>
@@ -210,18 +202,18 @@
       <workItem from="1541707900623" duration="3164000" />
       <workItem from="1542060763579" duration="19034000" />
       <workItem from="1542386686367" duration="10755000" />
-      <workItem from="1542648933256" duration="9526000" />
+      <workItem from="1542648933256" duration="10317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44789000" />
+    <option name="totallyTimeSpent" value="45580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="533" y="23" width="1147" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49961802" visible="true" weight="0.0" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49961802" weight="0.0" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.50038195" side_tool="true" weight="0.24989001" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -235,7 +227,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33949944" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.33949944" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -278,21 +270,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/configuration/configuration.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
+        <state relative-caret-position="125">
           <caret line="24" column="67" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/gtagCode.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#383#591#0" />
-            <element signature="e#891#1106#0" />
-            <element signature="e#662#696#0" />
-            <element signature="e#771#808#0" />
-          </folding>
+        <state relative-caret-position="140">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
