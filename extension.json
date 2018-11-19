@@ -21,6 +21,10 @@
           "items": {
             "type": "string",
             "minLength": 1
+          },
+          "dataLayerName": {
+            "type": "string",
+            "minLength": 1
           }
         }
       }
