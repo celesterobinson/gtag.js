@@ -2,7 +2,7 @@
   "displayName": "Google gtag",
   "name": "gtag.js",
   "platform": "web",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Load Google's gtag.js into your site to send event data to Google Analytics, Google Ads, and Google Marketing Platform. This extension only adds the gtag code to your site. You will need to use other Google extensions to add events and actions that will use gtag.",
   "iconPath": "google-g.svg",
   "author": {
