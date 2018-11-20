@@ -1,6 +1,6 @@
 {
   "name": "gtag",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Load Google's gtag.js into your site to send event data to Google Analytics, Google Ads, and Google Marketing Platform.",
   "main": "index.js",
   "scripts": {
