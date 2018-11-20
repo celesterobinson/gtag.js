@@ -20,7 +20,7 @@
                 <input class="mdl-textfield__input" type="text" id="conversionIds" placeholder="e.g. AW-123456789, GA-123456789">
             </div>
         </div>
-        <label id="checkbox" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="datalayerCheckbox">
+        <label id="checkbox" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="dataLayerCheckbox">
             <input type="checkbox" id="dataLayerCheckbox" class="data-layer-checkbox mdl-checkbox__input">
             <span class="mdl-checkbox__label">Provide custom data layer name</span>
         </label>
@@ -42,19 +42,10 @@
         var dataLayerCheckbox = document.querySelector('#dataLayerCheckbox');
         var dataLayerInputWrapper = document.querySelector('#dataLayerInputWrapper');
 
-        var toggleErrorStyle = ((element, valid) => {
-            return element.classList.toggle('error', valid);
-        });
-
         dataLayerCheckboxLabel.addEventListener("click", () => {
             if (dataLayerCheckbox.checked) {
                 dataLayerCheckboxLabel.MaterialCheckbox.uncheck();
                 dataLayerInputWrapper.setAttribute('hidden', 'true');
-                toggleErrorStyle(dataLayerInput, false);
-                dataLayerInput.value = '';
-                if (!conversionIdsInput.classList.contains('error')) {
-                    errorMsg.innerHTML = '';
-                }
             } else {
                 dataLayerCheckboxLabel.MaterialCheckbox.check();
                 dataLayerInputWrapper.removeAttribute('hidden');
@@ -98,18 +89,22 @@
                 var dataLayerInputValue = dataLayerInput.value;
                 var errorMessage = 'Please fill out the missing fields';
 
+                var toggleErrorStyle = ((element, valid) => {
+                    return element.classList.toggle('error', !valid);
+                });
+
                 if (!conversionIds) {
                     valid = false;
-                    toggleErrorStyle(conversionIdsInput, true);
-                } else {
                     toggleErrorStyle(conversionIdsInput, false);
+                } else {
+                    toggleErrorStyle(conversionIdsInput, true);
                 }
 
                 if (checkboxChecked && !dataLayerInputValue) {
                     valid = false;
-                    toggleErrorStyle(dataLayerInput, true);
-                } else {
                     toggleErrorStyle(dataLayerInput, false);
+                } else {
+                    toggleErrorStyle(dataLayerInput, true);
                 }
 
                 errorMsg.innerHTML = valid ? '' : errorMessage;
