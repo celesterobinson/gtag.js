@@ -42,11 +42,19 @@
         var dataLayerCheckbox = document.querySelector('#dataLayerCheckbox');
         var dataLayerInputWrapper = document.querySelector('#dataLayerInputWrapper');
 
+        var toggleErrorStyle = ((element, valid) => {
+            return element.classList.toggle('error', valid);
+        });
 
         dataLayerCheckboxLabel.addEventListener("click", () => {
             if (dataLayerCheckbox.checked) {
                 dataLayerCheckboxLabel.MaterialCheckbox.uncheck();
                 dataLayerInputWrapper.setAttribute('hidden', 'true');
+                toggleErrorStyle(dataLayerInput, false);
+                dataLayerInput.value = '';
+                if (!conversionIdsInput.classList.contains('error')) {
+                    errorMsg.innerHTML = '';
+                }
             } else {
                 dataLayerCheckboxLabel.MaterialCheckbox.check();
                 dataLayerInputWrapper.removeAttribute('hidden');
@@ -89,10 +97,6 @@
                 var conversionIds = conversionIdsInput.value.trim();
                 var dataLayerInputValue = dataLayerInput.value;
                 var errorMessage = 'Please fill out the missing fields';
-
-                var toggleErrorStyle = ((element, valid) => {
-                    return element.classList.toggle('error', valid);
-                });
 
                 if (!conversionIds) {
                     valid = false;
