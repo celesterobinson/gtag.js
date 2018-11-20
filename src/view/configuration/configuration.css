@@ -8,6 +8,7 @@ body {
 
 .error-msg {
     color: #c3291c;
+    padding: 10px 0;
 }
 
 .error-msg-hide {
